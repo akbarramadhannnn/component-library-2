@@ -1,0 +1,50 @@
+{
+  "name": "@akbarramadhannnn/component-library-2",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "rollup": "rm -rf dist && rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "Akbar Ramadhan",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-react": "^7.22.3",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/blocks": "^7.0.18",
+    "@storybook/react": "^7.0.18",
+    "@storybook/react-webpack5": "^7.0.18",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^17.0.34",
+    "postcss": "^8.4.24",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.60.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "storybook": "^7.0.18"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/akbarramadhannnn"
+  }
+}
