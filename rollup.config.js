@@ -1,8 +1,8 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import babel from "rollup-plugin-babel";
-// import external from "rollup-plugin-peer-deps-external";
-// import typescript from "@rollup/plugin-typescript";
+import external from "rollup-plugin-peer-deps-external";
+import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
 
@@ -28,16 +28,17 @@ export default [
         exclude: "node_modules/**",
         presets: ["@babel/preset-env", "@babel/preset-react"],
       }),
-    //   external(),
+      external(),
       resolve(),
       commonjs(),
-      //   typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
     ],
   },
   {
-    input: "dist/esm/index.js",
-    output: [{ file: "dist/index.d.js", format: "esm" }],
+    input: "dist/esm/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
+    external: [/\.css$/]
   },
 ];
